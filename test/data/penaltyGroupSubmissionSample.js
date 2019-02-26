@@ -101,6 +101,6 @@ export default {
 	PendingTransactions: [{
 		ReceiptReference: 'ECMS-01-20190131-151909-F38F9FC5',
 		PenaltyType: 'FPN',
-		StatusUpdateTime: 1534896000.120,
+		ReceiptTimestamp: 1534896000.120,
 	}],
 };

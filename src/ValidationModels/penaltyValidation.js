@@ -1,5 +1,10 @@
 import Joi from 'joi';
 
+const pendingTransactionSchema = {
+	ReceiptReference: Joi.string().regex(/^[0-9-A-Z]*$/),
+	ReceiptTimestamp: Joi.number(),
+};
+
 const regNoValidation = Joi.string().min(1).max(10)
 	.regex(/^[A-Z0-9a-z]{1,10}$/);
 
@@ -55,5 +60,6 @@ export default {
 		Value: Joi.object(valueSchema),
 		Origin: Joi.string().regex(/^[A-Z]*$/),
 		VehicleRegistration: regNoValidation,
+		PendingTransactions: Joi.array().items(pendingTransactionSchema),
 	}),
 };
