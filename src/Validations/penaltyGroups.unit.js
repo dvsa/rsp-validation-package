@@ -48,4 +48,46 @@ describe('penaltyGroupValidation', () => {
 			expect(valid).toBe(false);
 		});
 	});
+
+	describe('when pending transaction list is undefined', () => {
+		it('should return valid set to true', () => {
+			delete penaltyGroup.PendingTransactions;
+			expect(penaltyGroupValidation(penaltyGroup).valid).toBe(true);
+		});
+	});
+
+	describe('when pending transaction list is empty', () => {
+		it('should return valid set to true', () => {
+			penaltyGroup.PendingTransactions = [];
+			expect(penaltyGroupValidation(penaltyGroup).valid).toBe(true);
+		});
+	});
+
+	describe('when pending transaction penalty type is invalid', () => {
+		it('should return valid set to false', () => {
+			penaltyGroup.PendingTransactions[0].PenaltyType = 'Fixed penalty';
+			expect(penaltyGroupValidation(penaltyGroup).valid).toBe(false);
+		});
+	});
+
+	describe('when pending transaction penalty type is invalid', () => {
+		it('should return valid set to false', () => {
+			penaltyGroup.PendingTransactions[0].PenaltyType = 'Fixed penalty';
+			expect(penaltyGroupValidation(penaltyGroup).valid).toBe(false);
+		});
+	});
+
+	describe('when pending transaction receipt reference is invalid', () => {
+		it('should return valid set to false', () => {
+			penaltyGroup.PendingTransactions[0].ReceiptReference = '{receipt}';
+			expect(penaltyGroupValidation(penaltyGroup).valid).toBe(false);
+		});
+	});
+
+	describe('when pending transaction time is invalid', () => {
+		it('should return valid set to false', () => {
+			penaltyGroup.PendingTransactions[0].StatusUpdateTime = '15:30';
+			expect(penaltyGroupValidation(penaltyGroup).valid).toBe(false);
+		});
+	});
 });

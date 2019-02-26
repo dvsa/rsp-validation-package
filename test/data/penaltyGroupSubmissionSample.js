@@ -98,4 +98,9 @@ export default {
 	SiteCode: 31,
 	Timestamp: 1534950379.810688,
 	VehicleRegistration: 'FHB,FHBGH',
+	PendingTransactions: [{
+		ReceiptReference: 'ECMS-01-20190131-151909-F38F9FC5',
+		PenaltyType: 'FPN',
+		StatusUpdateTime: 1534896000.120,
+	}],
 };
