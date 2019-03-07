@@ -38,10 +38,11 @@ describe('penaltyValidation', () => {
 			},
 			Hash: 'c3c7581adeec5585e953e2a613c26986ce35a733f17947921cb828749c1aaf22',
 			VehicleRegistration: '12212121X',
-			PendingTransactions: [{
-				ReceiptReference: 'ECMS-01-20190131-151919-F38F9FC5',
-				ReceiptTimestamp: 2534196000.120,
-			}],
+			PendingTransactions: {
+				'ECMS-01-20190131-151919-F38F9FC5': {
+					ReceiptTimestamp: 1534896000.120,
+				},
+			},
 		};
 	});
 
@@ -305,21 +306,21 @@ describe('penaltyValidation', () => {
 
 	describe('when pending transaction list is empty', () => {
 		it('should return valid set to true', () => {
-			exampleDocument.PendingTransactions = [];
+			exampleDocument.PendingTransactions = {};
 			expect(penaltyValidation(exampleDocument).valid).toBe(true);
 		});
 	});
 
 	describe('when pending transaction receipt reference is invalid', () => {
 		it('should return valid set to false', () => {
-			exampleDocument.PendingTransactions[0].ReceiptReference = '{receipt}';
+			exampleDocument.PendingTransactions['ECMS-01-20190131-151919-F38F9FC5'].ReceiptReference = '{receipt}';
 			assertInvalidPenaltyDocument(exampleDocument);
 		});
 	});
 
 	describe('when pending transaction time is invalid', () => {
 		it('should return valid set to false', () => {
-			exampleDocument.PendingTransactions[0].ReceiptTimestamp = '15:30';
+			exampleDocument.PendingTransactions['ECMS-01-20190131-151919-F38F9FC5'].ReceiptTimestamp = '15:30';
 			assertInvalidPenaltyDocument(exampleDocument);
 		});
 	});

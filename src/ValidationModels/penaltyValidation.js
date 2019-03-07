@@ -1,7 +1,6 @@
 import Joi from 'joi';
 
 const pendingTransactionSchema = {
-	ReceiptReference: Joi.string().regex(/^[0-9-A-Z]*$/),
 	ReceiptTimestamp: Joi.number(),
 };
 
@@ -60,6 +59,6 @@ export default {
 		Value: Joi.object(valueSchema),
 		Origin: Joi.string().regex(/^[A-Z]*$/),
 		VehicleRegistration: regNoValidation,
-		PendingTransactions: Joi.array().items(pendingTransactionSchema),
+		PendingTransactions: Joi.object().pattern(/[0-9-A-Z]/, Joi.object(pendingTransactionSchema)).optional(),
 	}),
 };
