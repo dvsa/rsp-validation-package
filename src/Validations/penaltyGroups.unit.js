@@ -3,7 +3,6 @@ import expect from 'expect';
 import penaltyGroupValidation from './penaltyGroups';
 import penaltyGroupSubmissionSample from '../../test/data/penaltyGroupSubmissionSample';
 
-
 describe('penaltyGroupValidation', () => {
 	let penaltyGroup;
 

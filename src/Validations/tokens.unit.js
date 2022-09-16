@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-import tokenValidation from '../Validations/tokens';
+import tokenValidation from './tokens';
 
 let exampleToken;
 

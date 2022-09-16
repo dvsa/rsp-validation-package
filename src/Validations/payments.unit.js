@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-import paymentValidation from '../Validations/payments';
+import paymentValidation from './payments';
 
 let examplePayment;
 

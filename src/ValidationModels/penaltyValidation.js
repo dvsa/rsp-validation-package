@@ -20,10 +20,9 @@ const trailerSchema = {
 	number2: Joi.string(),
 };
 
-
 const valueSchema = {
 	penaltyType: Joi.string().regex(/^(IM|CDN|FPN)$/).required(),
-	paymentStatus: Joi.string().valid(['PAID', 'UNPAID']),
+	paymentStatus: Joi.string().valid('PAID', 'UNPAID'),
 	paymentAuthCode: Joi.string().alphanum(),
 	// .when('paymentStatus', { is: 'PAID', then: Joi.required() }),
 	paymentDate: Joi.number().integer(),
@@ -49,7 +48,7 @@ const valueSchema = {
 };
 
 export default {
-	request: Joi.object().keys({
+	request: {
 		ID: Joi.string().token().required(),
 		Hash: Joi.string().required().alphanum(),
 		Enabled: Joi.boolean().required(),
@@ -57,5 +56,5 @@ export default {
 		Value: Joi.object(valueSchema),
 		Origin: Joi.string().regex(/^[A-Z]*$/),
 		VehicleRegistration: regNoValidation,
-	}),
+	},
 };

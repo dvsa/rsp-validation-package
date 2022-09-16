@@ -2,7 +2,8 @@ import Joi from 'joi';
 import penaltyDocumentValidation from '../ValidationModels/penaltyValidation';
 
 export default (data) => {
-	const validationResult = Joi.validate(data, penaltyDocumentValidation.request);
+	const schema = Joi.object(penaltyDocumentValidation.request);
+	const validationResult = schema.validate(data);
 	if (validationResult.error) {
 		return {
 			valid: false,
@@ -41,8 +42,8 @@ export default (data) => {
 			const middleSegment = Number(matches[2]);
 			const lastSegment = Number(matches[3]);
 
-			if ((initialSegment === 0 || lastSegment === 0) ||
-			(middleSegment !== 0 && middleSegment !== 1)) {
+			if ((initialSegment === 0 || lastSegment === 0)
+			|| (middleSegment !== 0 && middleSegment !== 1)) {
 				const errMsg = 'Invalid referenceNo';
 				return { valid: false, error: { message: errMsg } };
 			}
@@ -53,9 +54,9 @@ export default (data) => {
 				const idMiddleSegment = Number(idMatches[2]);
 				const idLastSegment = Number(idMatches[3]);
 
-				if (idInitialSegment !== initialSegment ||
-					idLastSegment !== lastSegment ||
-					idMiddleSegment !== middleSegment) {
+				if (idInitialSegment !== initialSegment
+					|| idLastSegment !== lastSegment
+					|| idMiddleSegment !== middleSegment) {
 					const errMsg = 'ID does not match referenceNo and penaltyType';
 					return { valid: false, error: { message: errMsg } };
 				}

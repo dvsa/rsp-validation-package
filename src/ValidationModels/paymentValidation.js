@@ -8,12 +8,11 @@ const paymentDetailsSchema = {
 	PaymentMethod: Joi.string().regex(/^(CARD|CHEQUE|CASH|POSTAL)$/),
 };
 
-
 export default {
-	request: Joi.object().keys({
+	request: {
 		PenaltyReference: Joi.string().required().regex(/^[0-9]{12,13}$/),
 		PenaltyType: Joi.string().regex(/^(IM|CDN|FPN)$/).required(),
 		PenaltyStatus: Joi.string().regex(/^(PAID|UNPAID)$/).required(),
 		PaymentDetail: Joi.object(paymentDetailsSchema).required(),
-	}),
+	},
 };

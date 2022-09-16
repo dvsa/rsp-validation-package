@@ -31,7 +31,7 @@ const paymentDataSchema = {
 };
 
 export default {
-	request: Joi.object().keys({
+	request: {
 		redirect_uri: Joi.string().when('scope', { is: ['CARD', 'CNP'], then: Joi.string().required(), otherwise: Joi.forbidden() }),
 		slip_number: Joi.when('scope', { is: ['CASH', 'CHEQUE', 'POSTAL_ORDER'], then: Joi.string().required(), otherwise: Joi.forbidden() }),
 		batch_number: Joi.when('scope', { is: ['CASH', 'CHEQUE', 'POSTAL_ORDER'], then: Joi.string().required(), otherwise: Joi.forbidden() }),
@@ -55,5 +55,5 @@ export default {
 			postcode: Joi.string().required(),
 		}),
 		payment_data: Joi.array().items(Joi.object(paymentDataSchema)).min(1).max(10),
-	}),
+	},
 };

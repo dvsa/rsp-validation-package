@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-import penaltyValidation from '../Validations/penaltyDocuments';
+import penaltyValidation from './penaltyDocuments';
 
 let exampleDocument;
 

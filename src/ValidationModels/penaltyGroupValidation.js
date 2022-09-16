@@ -2,7 +2,7 @@ import Joi from 'joi';
 import PenaltyValidation from './penaltyValidation';
 
 export default {
-	request: Joi.object().keys({
+	request: {
 		Offset: Joi.number().required(),
 		Timestamp: Joi.number().required(),
 		Location: Joi.string().required(),
@@ -12,5 +12,5 @@ export default {
 		fpnPaymentStartTime: Joi.number(),
 		imPaymentStartTime: Joi.number(),
 		cdnPaymentStartTime: Joi.number(),
-	}),
+	},
 };

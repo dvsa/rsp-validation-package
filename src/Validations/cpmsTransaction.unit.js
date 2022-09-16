@@ -8,7 +8,6 @@ import cpmsPayloadSampleCash from '../../test/data/cpmsPayloads/cpmsPayloadSampl
 import cpmsPayloadSampleCheque from '../../test/data/cpmsPayloads/cpmsPayloadSampleCheque';
 import cpmsPayloadSamplePostal from '../../test/data/cpmsPayloads/cpmsPayloadSamplePostal';
 
-
 describe('cpmsTransactionValidation', () => {
 
 	context('given exceptional input values are being validated', () => {
