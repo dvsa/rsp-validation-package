@@ -5,18 +5,18 @@ on:
 
 jobs:
   lint:
-    uses: dvsa/.github/.github/workflows/nodejs-lint.yaml@main
+    uses: dvsa/.github/.github/workflows/nodejs-lint.yaml@v1.0.0
 
   test:
-    uses: dvsa/.github/.github/workflows/nodejs-test.yaml@main
+    uses: dvsa/.github/.github/workflows/nodejs-test.yaml@v1.0.0
 
   security:
-    uses: dvsa/.github/.github/workflows/nodejs-security.yaml@main
+    uses: dvsa/.github/.github/workflows/nodejs-security.yaml@v1.0.0
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
   build:
-    uses: dvsa/.github/.github/workflows/nodejs-build.yaml@main
+    uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v1.0.0
     with:
       upload-artifact: true
       artifact-name: package
