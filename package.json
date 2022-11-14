@@ -39,5 +39,11 @@
     "eslint-plugin-import": "^2.26.0",
     "expect": "^29.2.2",
     "mocha": "^10.1.0"
-  }
+  },
+  "files": [
+    "package.json",
+    "package-lock.json",
+    "license",
+    "src"
+  ]
 }
