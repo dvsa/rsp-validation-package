@@ -2,7 +2,7 @@ import cpmsTransactionValidation from '../ValidationModels/cpmsTransactionValida
 
 export default (data) => {
 	const schema = cpmsTransactionValidation.request;
-	const joiResult = schema.validate(data);
+	const joiResult = schema.validate(data, { errors: { wrap: { label: '' } } });
 	if (joiResult.error) {
 		return {
 			valid: false,

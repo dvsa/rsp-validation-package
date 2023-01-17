@@ -4,7 +4,7 @@ import paymentValidation from '../ValidationModels/paymentValidation';
 
 export default (data) => {
 	const schema = paymentValidation.request;
-	const validationResult = schema.validate(data);
+	const validationResult = schema.validate(data, { errors: { wrap: { label: '' } } });
 	if (validationResult.error) {
 		return {
 			valid: false,

@@ -2,7 +2,7 @@ import PenaltyGroupValidation from '../ValidationModels/penaltyGroupValidation';
 
 export default (data) => {
 	const schema = PenaltyGroupValidation.request;
-	const joiResult = schema.validate(data);
+	const joiResult = schema.validate(data, { errors: { wrap: { label: '' } } });
 	if (joiResult.error) {
 		return {
 			valid: false,
