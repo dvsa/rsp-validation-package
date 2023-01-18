@@ -1,10 +1,29 @@
-name: NPM Publish
+name: Release
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      tag_name: ${{ steps.release.outputs.tag_name }}
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node
+          package-name: rsp-validation
+
   test:
     uses: dvsa/.github/.github/workflows/nodejs-test.yaml@v2.3
 
@@ -17,6 +36,8 @@ jobs:
     
   build:
     uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v2.3
+    if: ${{ needs.release-please.outputs.release-created }}
+    needs: [ release-please, test, security ]
     with:
       upload_artifact: true
       build_folder: package
@@ -25,7 +46,8 @@ jobs:
       build_command: build
 
   publish:
-    needs: [test, security, build]
+    needs: [release-please, test, security, build]
+    if: ${{ needs.release-please.outputs.release-created }}
     uses: dvsa/.github/.github/workflows/nodejs-publish.yaml@v2.3
     with:
       node_version: '16.x'
