@@ -2,7 +2,7 @@ import penaltyDocumentValidation from '../ValidationModels/penaltyValidation';
 
 export default (data) => {
 	const schema = penaltyDocumentValidation.request;
-	const validationResult = schema.validate(data);
+	const validationResult = schema.validate(data, { errors: { wrap: { label: '' } } });
 	if (validationResult.error) {
 		return {
 			valid: false,
