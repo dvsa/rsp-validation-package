@@ -27,3 +27,8 @@ If using Node.JS:
 
     npm test
 
+## Publishing Package
+
+Uses GitHub to package and release. GitHub will create a release job merge requests which bumps the version in the package.json based on the conventional commits. If there are breaking changes, make sure the commit specifies this.
+
+Merging the release PR will trigger the release action which publishes a new version to NPM automatically. NPM token must be in GitHub with permission to publish to DVSA npm org.
