@@ -54,6 +54,6 @@ export default {
 			city: Joi.string().required(),
 			postcode: Joi.string().required(),
 		}),
-		payment_data: Joi.array().items(Joi.object(paymentDataSchema)).min(1).max(10),
+		payment_data: Joi.array().items(Joi.object(paymentDataSchema)).min(1),
 	}),
 };
