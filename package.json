@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/rsp-validation",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Validation package for Roadside Payments",
   "main": "dist/index.js",
   "engine": {
@@ -12,7 +12,7 @@
     "build": "babel ./src --out-dir ./dist",
     "prepublish": "npm test && npm run lint && npm run build",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix", 
+    "lint:fix": "eslint src --fix",
     "prepush": "npm test && npm run lint && npm run check-security && npm run check-security-log",
     "check-security": "git secrets --scan",
     "check-security-log": "git log -p | scanrepo"
