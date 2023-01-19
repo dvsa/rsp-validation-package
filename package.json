@@ -1,6 +1,6 @@
 {
   "name": "@dvsa/rsp-validation",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Validation package for Roadside Payments",
   "main": "dist/index.js",
   "engine": {
