@@ -36,7 +36,7 @@ jobs:
     
   build:
     uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v2.3
-    if: ${{ needs.release-please.outputs.release-created }}
+    if: ${{ needs.release-please.outputs.release_created }}
     needs: [ release-please, test, security ]
     with:
       upload_artifact: true
@@ -47,7 +47,7 @@ jobs:
 
   publish:
     needs: [release-please, test, security, build]
-    if: ${{ needs.release-please.outputs.release-created }}
+    if: ${{ needs.release-please.outputs.release_created }}
     uses: dvsa/.github/.github/workflows/nodejs-publish.yaml@v2.3
     with:
       node_version: '16.x'
