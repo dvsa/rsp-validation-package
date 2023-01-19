@@ -113,7 +113,7 @@ describe('cpmsTransactionValidation', () => {
 		});
 	});
 
-	context('given a cheque payment object is  being validated', () => {
+	context('given a cheque payment object is being validated', () => {
 		let chequePaymentObject;
 
 		beforeEach(() => {
@@ -134,7 +134,7 @@ describe('cpmsTransactionValidation', () => {
 		beforeEach(() => {
 			postalOrderPaymentObject = { ...cpmsPayloadSamplePostal };
 		});
-		describe('when a valid postal order payment obejct is passed for validation', () => {
+		describe('when a valid postal order payment object is passed for validation', () => {
 			it('should return valid set to true', () => {
 				const validationResult = cpmsTransactionValidation(postalOrderPaymentObject);
 				expect(validationResult.error.message).toBeUndefined();
