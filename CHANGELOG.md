@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/dvsa/rsp-validation-package/compare/v1.9.0...v1.9.1) (2023-01-19)
+
+
+### Bug Fixes
+
+* spelling errors in cpmsTransaction.unit.js ([#43](https://github.com/dvsa/rsp-validation-package/issues/43)) ([8b6b076](https://github.com/dvsa/rsp-validation-package/commit/8b6b076b7be390f89fce7d3492499ccebe957c4c))
+
 ## [1.9.0](https://github.com/dvsa/rsp-validation-package/compare/v1.8.0...v1.9.0) (2023-01-18)
 
 
