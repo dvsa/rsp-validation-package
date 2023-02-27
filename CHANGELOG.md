@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.2](https://github.com/dvsa/rsp-validation-package/compare/v1.9.1...v1.9.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* updated all dependencies ([#46](https://github.com/dvsa/rsp-validation-package/issues/46)) ([6501f53](https://github.com/dvsa/rsp-validation-package/commit/6501f5399391f499daf9cbbd95624e5b2be6745d))
+
 ## [1.9.1](https://github.com/dvsa/rsp-validation-package/compare/v1.9.0...v1.9.1) (2023-01-19)
 
 
