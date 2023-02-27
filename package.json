@@ -25,19 +25,19 @@
   "author": "Driver and Vehicle Standards Agency",
   "license": "MIT",
   "dependencies": {
-    "joi": "^17.7.0"
+    "joi": "^17.8.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.20.12",
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
-    "babel-loader": "^9.1.0",
-    "@babel/preset-env": "^7.19.4",
-    "@babel/register": "^7.18.9",
-    "eslint": "^8.26.0",
+    "babel-loader": "^9.1.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.21.0",
+    "eslint": "^8.35.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "expect": "^29.2.2",
-    "mocha": "^10.1.0"
+    "eslint-plugin-import": "^2.27.5",
+    "expect": "^29.4.3",
+    "mocha": "^10.2.0"
   }
 }
