@@ -25,9 +25,9 @@ jobs:
     uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v3.5.0
     with:
       node-version: 20.x
-      upload_artifact: true
-      build_folder: package
-      build_folder_path: dist
-      retention_days: 3
-      build_command: build
+      upload-artifact: true
+      build-folder: package
+      build-folder-path: dist
+      retention-days: 3
+      build-command: build
       
