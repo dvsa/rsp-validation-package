@@ -25,35 +25,38 @@ jobs:
           package-name: rsp-validation
 
   test:
-    uses: dvsa/.github/.github/workflows/nodejs-test.yaml@v2.3
+    uses: dvsa/.github/.github/workflows/nodejs-test.yaml@v4.0.1
+    with:
+      node_version: '20.x'
 
   security:
-    uses: dvsa/.github/.github/workflows/nodejs-security.yaml@v2.3
+    uses: dvsa/.github/.github/workflows/nodejs-security.yaml@v4.0.1
     with:
       args: --all-projects
     secrets:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    
+
   build:
-    uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v2.3
+    uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v4.0.1
     if: ${{ needs.release-please.outputs.release_created }}
     needs: [ release-please, test, security ]
     with:
-      upload_artifact: true
-      build_folder: package
-      build_folder_path: dist
-      retention_days: 3
-      build_command: build
+      node_version: '20.x'
+      upload-artifact: true
+      build-folder: package
+      build-folder-path: dist
+      retention-days: 3
+      build-command: build
 
   publish:
     needs: [release-please, test, security, build]
     if: ${{ needs.release-please.outputs.release_created }}
-    uses: dvsa/.github/.github/workflows/nodejs-publish.yaml@v2.3
+    uses: dvsa/.github/.github/workflows/nodejs-publish.yaml@v4.0.1
     with:
-      node_version: '16.x'
-      download_artifact: true
-      build_folder: package
-      build_folder_path: dist
+      node_version: '20.x'
+      download-artifact: true
+      build-folder: package
+      build-folder-path: dist
       args: "--access=public"
     secrets:
       NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
