@@ -46,7 +46,7 @@ jobs:
       build-folder: package
       build-folder-path: dist
       retention-days: 3
-      build-command: build
+      build-command: npm run build
 
   publish:
     needs: [release-please, test, security, build]
