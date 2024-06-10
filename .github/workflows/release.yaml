@@ -27,7 +27,7 @@ jobs:
   test:
     uses: dvsa/.github/.github/workflows/nodejs-test.yaml@v4.0.1
     with:
-      node_version: '20.x'
+      node-version: '20.x'
 
   security:
     uses: dvsa/.github/.github/workflows/nodejs-security.yaml@v4.0.1
@@ -41,7 +41,7 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created }}
     needs: [ release-please, test, security ]
     with:
-      node_version: '20.x'
+      node-version: '20.x'
       upload-artifact: true
       build-folder: package
       build-folder-path: dist
@@ -53,7 +53,7 @@ jobs:
     if: ${{ needs.release-please.outputs.release_created }}
     uses: dvsa/.github/.github/workflows/nodejs-publish.yaml@v4.0.1
     with:
-      node_version: '20.x'
+      node-version: '20.x'
       download-artifact: true
       build-folder: package
       build-folder-path: dist
