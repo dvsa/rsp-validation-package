@@ -1,13 +1,7 @@
 {
 	"presets": [
-	[	
-		"@babel/env", 
-		{
-			"targets": {
-				"node": "16.17"
-			},
-			"useBuiltIns": "entry",
-        	"corejs": "3"
-		}]
+		[
+			"@babel/env"
+		]
 	]
 }

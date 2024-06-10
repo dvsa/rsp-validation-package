@@ -4,7 +4,7 @@
   "description": "Validation package for Roadside Payments",
   "main": "dist/index.js",
   "engine": {
-    "node": "16.17"
+    "node": "20.x"
   },
   "scripts": {
     "test": "mocha --require @babel/register src/**/*.unit.js",
