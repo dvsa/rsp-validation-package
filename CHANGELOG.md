@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/dvsa/rsp-validation-package/compare/v1.9.2...v2.0.0) (2024-06-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* dependacy bumps, ensured node 20 compat., CI workflow bump ([#48](https://github.com/dvsa/rsp-validation-package/issues/48))
+
+### Features
+
+* dependacy bumps, ensured node 20 compat., CI workflow bump ([#48](https://github.com/dvsa/rsp-validation-package/issues/48)) ([95c47aa](https://github.com/dvsa/rsp-validation-package/commit/95c47aafaded460db95920e40d93cdc37576404d))
+
+
+### Bug Fixes
+
+* release pipeline param node-version rename ([#49](https://github.com/dvsa/rsp-validation-package/issues/49)) ([bbd6df5](https://github.com/dvsa/rsp-validation-package/commit/bbd6df5c459f57d43da2ffb09a7016770d7b74b5))
+
 ## [1.9.2](https://github.com/dvsa/rsp-validation-package/compare/v1.9.1...v1.9.2) (2023-02-27)
 
 
