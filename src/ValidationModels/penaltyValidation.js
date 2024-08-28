@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
-const regNoValidation = Joi.string().min(1).max(10)
-	.regex(/^[A-Z0-9a-z]{1,10}$/);
+const regNoValidation = Joi.string().min(1).max(21)
+	.regex(/^[A-Z0-9a-z]{1,21}$/);
 
 const driverSchema = {
 	name: Joi.string(),
