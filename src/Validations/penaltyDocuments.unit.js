@@ -196,9 +196,9 @@ describe('penaltyValidation', () => {
 			assertInvalidPenaltyDocument(exampleDocument, 'Value.vehicleDetails.regNo');
 		});
 	});
-	describe('when regNo is greater than 10 characters', () => {
+	describe('when regNo is greater than 21 characters', () => {
 		it('should return a fail with message', () => {
-			exampleDocument.Value.vehicleDetails.regNo = 'ABC123DEF45';
+			exampleDocument.Value.vehicleDetails.regNo = 'ABC123DEF45ABC123DEF45';
 			assertInvalidPenaltyDocument(exampleDocument, 'Value.vehicleDetails.regNo');
 		});
 	});
@@ -215,9 +215,9 @@ describe('penaltyValidation', () => {
 			expect(valid).toBe(true);
 		});
 	});
-	describe('when VehicleRegistration is greater than 10 characters', () => {
+	describe('when VehicleRegistration is greater than 21 characters', () => {
 		it('should return a fail with message', () => {
-			exampleDocument.VehicleRegistration = 'ABC123DEF45';
+			exampleDocument.VehicleRegistration = 'ABC123DEF45ABC123DEF45';
 			assertInvalidPenaltyDocument(exampleDocument, 'VehicleRegistration');
 		});
 	});
