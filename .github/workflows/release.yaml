@@ -22,7 +22,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: rsp-validation
+
 
   test:
     uses: dvsa/.github/.github/workflows/nodejs-test.yaml@v4.0.1
