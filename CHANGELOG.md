@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/dvsa/rsp-validation-package/compare/v4.0.0...v4.0.1) (2024-08-29)
+
+
+### Bug Fixes
+
+* workflow output fix ([#59](https://github.com/dvsa/rsp-validation-package/issues/59)) ([8e7edd3](https://github.com/dvsa/rsp-validation-package/commit/8e7edd3a7287c60701e4a081de4102a493c5a41c))
+
 ## [4.0.0](https://github.com/dvsa/rsp-validation-package/compare/v2.0.0...v4.0.0) (2024-08-19)
 
 
