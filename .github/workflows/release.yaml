@@ -16,7 +16,7 @@ jobs:
       pull-requests: write
     outputs:
       tag_name: ${{ steps.release.outputs.tag_name }}
-      release_created: ${{ steps.release.outputs.release_created }}
+      releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
@@ -38,7 +38,7 @@ jobs:
 
   build:
     uses: dvsa/.github/.github/workflows/nodejs-build.yaml@v4.0.1
-    if: ${{ needs.release-please.outputs.release_created }}
+    if: ${{ needs.release-please.outputs.releases_created }}
     needs: [ release-please, test, security ]
     with:
       node-version: '20.x'
@@ -50,7 +50,7 @@ jobs:
 
   publish:
     needs: [release-please, test, security, build]
-    if: ${{ needs.release-please.outputs.release_created }}
+    if: ${{ needs.release-please.outputs.releases_created }}
     uses: dvsa/.github/.github/workflows/nodejs-publish.yaml@v4.0.1
     with:
       node-version: '20.x'
