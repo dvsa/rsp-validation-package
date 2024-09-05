@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.2](https://github.com/dvsa/rsp-validation-package/compare/v4.0.1...v4.0.2) (2024-09-05)
+
+
+### Bug Fixes
+
+* amended regex for vehicle registration ([#61](https://github.com/dvsa/rsp-validation-package/issues/61)) ([6bcd213](https://github.com/dvsa/rsp-validation-package/commit/6bcd213294976541efc7fc3e3b490257a7632b4c))
+
 ## [4.0.1](https://github.com/dvsa/rsp-validation-package/compare/v4.0.0...v4.0.1) (2024-08-29)
 
 
