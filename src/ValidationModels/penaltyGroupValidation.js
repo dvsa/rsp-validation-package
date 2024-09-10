@@ -7,7 +7,7 @@ export default {
 		Timestamp: Joi.number().required(),
 		Location: Joi.string().required(),
 		SiteCode: Joi.number().required(),
-		VehicleRegistration: Joi.string().required().regex(/^[0-21A-Z,]*$/),
+		VehicleRegistration: Joi.string().required().regex(/^[A-Z0-9a-z]{1,21}$/),
 		Penalties: Joi.array().items(PenaltyValidation.request).required(),
 		fpnPaymentStartTime: Joi.number(),
 		imPaymentStartTime: Joi.number(),
