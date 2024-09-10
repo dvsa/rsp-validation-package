@@ -97,5 +97,5 @@ export default {
 	Location: 'Harlow (M11 J.17)',
 	SiteCode: 31,
 	Timestamp: 1534950379.810688,
-	VehicleRegistration: 'FHB,FHBGH',
+	VehicleRegistration: 'FHBFHBGH',
 };
