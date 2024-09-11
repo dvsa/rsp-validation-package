@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.0.4](https://github.com/dvsa/rsp-validation-package/compare/v4.0.2...v4.0.4) (2024-09-11)
+
+
+### Miscellaneous Chores
+
+* release 4.0.3 ([d1b800c](https://github.com/dvsa/rsp-validation-package/commit/d1b800caa783fe5f61a696b05e3173ee6f05ca04))
+* release 4.0.4 ([32e88d2](https://github.com/dvsa/rsp-validation-package/commit/32e88d292ac75d891c1f6ebe01db6c666363dfba))
+
 ## [4.0.2](https://github.com/dvsa/rsp-validation-package/compare/v4.0.1...v4.0.2) (2024-09-05)
 
 
